@@ -41,7 +41,101 @@ class MyApp extends StatelessWidget {
           ],
         ),
         // https://www.youtube.com/watch?v=m0nEbAEnt9g
-        drawer: Drawer(),
+        drawer: Drawer(
+          child: ListView(
+            // padding: EdgeInsets.zero,
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 250, 201, 77),
+                ),
+                child: DrawerHeader(
+                  child: Column(
+                    children: [
+                      Container(
+                        width: 80,
+                        height: 80,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.white,
+                          image: DecorationImage(
+                            fit: BoxFit.fill,
+                            image: NetworkImage(
+                                "https://cdn.pixabay.com/photo/2020/11/15/18/31/cat-5746771_960_720.png"),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 14,
+                      ),
+                      Text(
+                        "닉네임",
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        "hello@world.com",
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 90,
+                child: PageView(
+                  children: [
+                    Container(
+                      color: Color.fromARGB(136, 92, 244, 97),
+                      child: Center(
+                        child: Text("Event1"),
+                      ),
+                    ),
+                    Container(
+                      color: Color.fromARGB(135, 7, 125, 228),
+                      child: Center(
+                        child: Text("Event2"),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              ListTile(
+                title: Text(
+                  "구매내역",
+                  style: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                trailing: IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.arrow_forward_ios,
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+              ListTile(
+                title: Text(
+                  "저장한 레시피",
+                  style: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                trailing: IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.arrow_forward_ios,
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
